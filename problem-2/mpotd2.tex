@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+
+% Packages
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage} 
+
+% Define Header
+\lhead{March 23, 2021}
+\chead{}
+\rhead{jnrozano@up.edu.ph}
+
+% Define Footer
+\lfoot{Jhon Christian N. Rozano}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+%Define width of horizontal line in the header
+\renewcommand{\headrulewidth}{1pt}
+
+%Define width of horizontal line in the footer
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+\centering
+		\large{\textbf{Math Problem of the Day}}
+	\justify
+
+Given that $a_1, a_2, a_3, a_4 > 0$, find the maximum constant $N$ for which the following inequality always holds true:
+
+\[ \frac{a_1a_2\left({a_3}^2+{a_4}^2\right) +a_3a_4\left({a_1}^2+{a_2}^2 \right)}{a_1a_2a_3a_4} \geq N \]
+
+\bigskip
+	\noindent
+		\textbf{Solution:}
+
+\noindent
+Note that 
+\begin{align*}
+	 \frac{a_1a_2\left({a_3}^2+{a_4}^2\right) +a_3a_4\left({a_1}^2+{a_2}^2 \right)}					{a_1a_2a_3a_4} &= \frac{a_1a_2\left({a_3}^2+{a_4}^2\right)}{a_1a_2a_3a_4} + 
+	\frac{a_3a_4\left({a_1}^2+{a_2}^2 \right)}{a_1a_2a_3a_4} \\	
+	&= \frac{\left( {a_3}^2 + {a_4}^2 \right)}{a_3a_4} + \frac{\left( {a_1}^2 + {a_2}^2 \right)}{a_1a_2} \\
+   & = \frac{a_3}{a_4} + \frac{a_4}{a_3} + \frac{a_1}{a_2} + \frac{a_2}{a_1} \\ 
+\end{align*}
+From $AM-GM$, we can find that
+
+\[ \frac{\frac{a_3}{a_4} + \frac{a_4}{a_3} + \frac{a_1}{a_2} + \frac{a_2}{a_1} }{4} \geq \sqrt[4]{\frac{a_3}{a_4} \times \frac{a_4}{a_3} \times \frac{a_1}{a_2} \times \frac{a_2}{a_1}} \]
+
+\[  \frac{a_3}{a_4} + \frac{a_4}{a_3} + \frac{a_1}{a_2} + \frac{a_2}{a_1} \geq 4 = N \]
+
+\center
+Therefore, the answer is \textbf{$N = 4$}
+
+\end{document}
