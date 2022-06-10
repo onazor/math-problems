@@ -1,0 +1,89 @@
+\documentclass[14pt]{extreport}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{amsthm}
+\usepackage{tcolorbox}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{multicol}
+\def\deg{\ensuremath{^\circ}}
+\def\v#1{\ensuremath{\mathrm{#1}}}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage} 
+\usepackage{array, caption, tabularx,  ragged2e}
+\usepackage{colortbl}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\setlength{\parskip}{0pt}
+\lhead{Jhon Christian N. Rozano}
+\chead{}
+\rhead{July 8, 2021}
+
+\lfoot{Source: Brilliant}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\renewcommand{\footrulewidth}{1pt}
+
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\renewcommand{\familydefault}{\sfdefault}
+\def\mathLarge#1{\mbox{\LARGE $#1$}}
+
+\begin{document}
+	\setlength{\columnsep}{10pt}
+	\renewcommand{\arraystretch}{1.5}
+	\singlespacing
+	\newtcolorbox{mybox}[1]{title=#1}
+	\begin{center}
+		{\large  \textbf{Math Problem of the Day}} \\ 
+	\end{center}
+	\medskip
+	\noindent
+	Let $\max (x,y)$ and $\min (x,y)$ be defined as follows for real numbers $x$ and $y$:
+	\[ \max (x,y) = \begin{cases}
+					x & (x \geq y) \\
+					y & (x < y)  \\
+					\end{cases} 
+	\]
+	\[ \min (x,y) = \begin{cases}
+					x & (x < y) \\
+					y & (x \geq y)  \\
+					\end{cases} 
+	\]
+	If the following holds for distinct numbers $x$ and $y$, what is $3xy$:
+	\[ \max (x,y) = 5x -2y + 79 \hspace{3em} \min (x,y) = 4x + 3y -47 \]
+	\begin{mybox}{\textbf{Solution}}
+		WLOG, let $x > y$, then the functions will be
+		\[ \max (x,y) = x \hspace{3em} \min(x,y) = y \]
+		From this, we get the following equations:
+		\begin{equation}\label{max}
+			\max (x,y) = 5x - 2y + 79 = x \Rightarrow 4x - 2y = -79 \\
+		\end{equation}
+		\begin{equation}\label{min}
+			\min (x,y) = 4x + 3y + -47 = y \Rightarrow 4x + 2y = 47 \\
+		\end{equation} 
+	Solving for the values of $x$ and $y$ using equations \eqref{max} and \eqref{min}, we get $(x,y) = (-4, \frac{63}{2})$. However, this contradicts the assumption that $x > y$. \\
+	\medskip
+	
+	\noindent
+	Let $x < y$, then we get
+		\[ \max (x,y) = y \hspace{3em} \min(x,y) = x \]
+	Substituting these to the equations from the given, we have
+			\begin{equation}\label{max1}
+			\max (x,y) = 5x - 2y + 79 = y \Rightarrow 5x - 3y = -79 \\
+		\end{equation}
+		\begin{equation}\label{min2}
+			\min (x,y) = 4x + 3y + -47 = x \Rightarrow 3x + 3y = 47 \\
+		\end{equation} 
+	Solving for the values of $x$ and $y$ using equations \eqref{max1} and \eqref{min2}, we get $(x,y) = (-4, \frac{59}{3})$. This satisfies $ x = -4 < y = \frac{59}{3}$, thus the value of $3xy$ is equal to $3(-4)\left( \frac{59}{3} \right) = \boxed{\textcolor{red}{-236}} $
+	\end{mybox}
+\end{document}
