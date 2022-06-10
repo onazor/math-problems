@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+
+% Packages
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage} 
+
+% Define Header
+\lhead{March 22, 2021}
+\chead{}
+\rhead{jnrozano@up.edu.ph}
+
+% Define Footer
+\lfoot{Jhon Christian N. Rozano}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+%Define width of horizontal line in the header
+\renewcommand{\headrulewidth}{1pt}
+
+%Define width of horizontal line in the footer
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+
+	\centering
+		\large{\textbf{Math Problem of the Day}}
+	\justify
+	
+	Given a function
+	\[f(x) = ax^2-bx-16\] 
+	does not have two distinct real roots. Find the maximum value of $4a-b$.
+	
+	\bigskip
+	\noindent
+		\textbf{Solution:}
+	
+	\noindent
+		The discriminant of quadratic equation gives 
+		\[  b^2-4ac = b^2+64a \leq 0\]
+		Note that $b^2 \geq 0$ and $a$ will be negative. From this,
+		\[  b^2-4ac = b^2+64a = 0 \]
+		\[ a = -\frac{b^2}{64} \Rightarrow 4a-b= -\frac{b^2}{16} - b = - \left( \frac{b^2+16b}{16} \right) \]
+		Since $- \left( \frac{b^2+16b}{16} \right)$ is negative and $b^2 \geq 0$, we need to minimize the value of $b$ to maximize the value of $- \left( \frac{b^2+16b}{16} \right)$ using completing the square. Therefore,
+		\[ 4a-b= - \left( \frac{b^2+16b}{16} \right) = \frac{64 - {\left(b+8\right)^2}}{16} \Rightarrow b = -8 \  \text{and}\ a = -1 \] 
+		\textbf{\textcolor{red}{\[ max(4a-b) = 4 \]}}
+
+\end{document}
