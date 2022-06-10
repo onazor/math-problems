@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{amsthm}
+\usepackage{tcolorbox}
+\usepackage[paperheight=13in, paperwidth=8.5in, margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage} 
+\usepackage{array, caption, tabularx,  ragged2e}
+\usepackage{colortbl}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\setlength{\parskip}{0pt}
+\lhead{Jhon Christian N. Rozano}
+\chead{}
+\rhead{July 21, 2021}
+
+\lfoot{Source: Brilliant}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\renewcommand{\footrulewidth}{1pt}
+
+\renewcommand{\familydefault}{\sfdefault}
+\def\mathLarge#1{\mbox{\LARGE $#1$}}
+
+\begin{document}
+	\setlength{\columnsep}{10pt}
+	\renewcommand{\arraystretch}{1.5}
+	\singlespacing
+	\newtcolorbox{mybox}[1]{title=#1}
+	
+	\begin{center}
+		{\large  \textbf{Physics Problem of the Day}} \\
+	\end{center}
+	
+	\medskip
+	\begin{enumerate}
+		\item Table shuffleboard is a game (usually found in higher quality bars) in which a heavy puck is glided down a long table toward an end zone. Points are scored by getting the puck to come to rest as close to the edge as possible, the closer the puck, the higher the reward. \\
+		
+		If the puck slides off the end of the table, however, the player gets zero points. In the table shown below, three points are awarded for the far zone, one for the near zone, and zero if the puck doesn't cross the first line. 
+		\vspace{0.5cm}
+		\begin{center}
+		\includegraphics[scale = 0.15, clip=true]{wie.png}
+		\end{center}
+		\vspace{0.5cm}
+		Crudely, the difficulty $D$ of making it into each zone is proportional to $1/ \Delta s$, the range of allowable speeds between which the puck still stop inside the given zone.	For example, if the puck is released with speed ${s_3}^{max}$, it will stop just before falling off the end of the table, and if released with speed ${s_3}^{min}$, it will stop just inside the three point zone, and $\Delta s_3 = {s_3}^{\text{max}} - {s_3}^{\text{min}} $. \\
+		
+		Suppose the puck and the table have a coefficient of kinetic friction given by $\mu_k$, and that the puck is pulled down by the acceleration due to gravity, $g$. How much more difficult is it to get the puck to stop in the three point zone than in the one point zone? In other words, find
+		
+		\[ 	\frac{D_3}{D_1} = \frac{\Delta s_1}{\Delta s_3}\]
+		
+		\textbf{Details}
+		\begin{itemize}
+			\item $d_0 = 15\text{ m}$
+			\item $l = 5\text{ m}$
+		\end{itemize}
+	\end{enumerate}
+	\begin{mybox}{\textbf{Solution}}
+		We can use the formula $ {s_f}^2 = {s_0}^2 + 2ad $ to find the speed for each level. We can denote the final speed of the puck as $s_f = 0$, and isolate the equation with respect to $s_0$. 
+		\[ - {s_0}^2 = 2ad \,  \] 
+		From this, note that the acceleration along the system is always $- \mu_k g$ since it will not be affected by any external factors (initial speed).
+		\[ - {s_0}^2 = 2( - \mu_k g )d  \Rightarrow  s_0 = \sqrt{2 \mu_k g d }\]
+		Therefore, from point 1 which reaches from $15\text{ m}$ to $20\text{ m}$: 
+		\[ \Delta s_1 = {s_1}^{\text{max}} - {s_1}^{\text{min}}  = \sqrt{2 \mu_k g \times 20 } - \sqrt{2 \mu_k g \times 15} = \sqrt{2 \mu_k g}\left( \sqrt{20} - \sqrt{15} \right) \]
+		And from point 3 which reaches from $20\text{ m}$ to $25\text{ m}$: 
+		\[ \Delta s_3 = {s_3}^{\text{max}} - {s_3}^{\text{min}}  = \sqrt{2 \mu_k g \times 25 } - \sqrt{2 \mu_k g \times 20} = \sqrt{2 \mu_k g}\left( \sqrt{25} - \sqrt{20} \right) \]
+		Thus, the desired ratio is 
+		\[ \frac{D_3}{D_1} = \frac{\Delta s_1}{\Delta s_3} = \frac{ \cancel{\sqrt{2 \mu_k g}}\left( \sqrt{20} - \sqrt{15} \right)  }{ \cancel{\sqrt{2 \mu_k g}}\left( \sqrt{25} - \sqrt{20} \right)  } = \frac{2-\sqrt{3}}{\sqrt{5} - 2} \approx \boxed{1.14}  \]
+	\end{mybox}
+\end{document}
