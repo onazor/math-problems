@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{cancel}
+
+% Packages
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage} 
+
+% Define Header
+\lhead{March 25, 2021}
+\chead{}
+\rhead{jnrozano@up.edu.ph}
+
+% Define Footer
+\lfoot{Jhon Christian N. Rozano}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+%Define width of horizontal line in the header
+\renewcommand{\headrulewidth}{1pt}
+
+%Define width of horizontal line in the footer
+\renewcommand{\footrulewidth}{1pt}
+
+	\begin{document}
+	\centering
+		\large{\textbf{Math Problem of the Day}}
+	\justify
+	\[ 2^x + 2^{x+1} + 2^{x+2} + \dotsb + 2^{x+2015} =  4^x + 4^{x+1} + 4^{x+2} + \dotsb + 4^{x+2015} \]
+
+\noindent
+If $x$ satisfy the equation above and it can be represented as \[ \log_{D} \left( \frac{A}{1+B^C} \right) \] for positive integers $A$, $B$, $C$, and $D$, where $B$ is prime, determine the smallest value of $A+B+C+D$.
+
+\bigskip
+	\noindent
+		\textbf{Solution:}
+
+\[
+2^x + 2^{x+1} + 2^{x+2} + \dotsb + 2^{x+2015} =  4^x + 4^{x+1} + 4^{x+2} + \dotsb + 4^{x+2015}
+\]
+\[
+2^x \left( 1+2+2^2+ \dotsb + 2^{2015} \right) = 4^x \left( 1+4+4^2+ \dotsb + 4^{2015} \right)
+\]
+\[
+2^x \left[ \frac{1 \left( 2^{2016} - 1 \right) }{2-1} \right] = 2^{2x} \left[ \frac{1 \left( 4^{2016} - 1 \right)}{4-1} \right] 
+\]
+\[
+2^x \left( 2^{2016} -1 \right) = 2^{2x} \left( \frac{2^{4032} -1 }{3} \right)
+\]
+\[
+\frac{3 \left( 2^{2016} - 1 \right)}{2^{4032}-1} = \frac{3 \cancel{\left( 2^{2016} - 1 \right)}}{ \cancel{\left( 2^{2016}-1 \right)} \left( 2^{2016} + 1 \right)} = \frac{3}{2^{2016}+1} = 2^x
+\]
+
+\[ x = \log_{2} \left( \frac{3}{1+2^{2016}} \right) =  \log_{D} \left( \frac{A}{1+B^C} \right) \]
+
+\[A = 3, \ B = 2, \  C = 2016, \ \text{and} \ D = 2, \ \text{therefore,} \ A+B+C+D = \fbox{\textcolor{red}{2023}} \] 
+	\end{document}
