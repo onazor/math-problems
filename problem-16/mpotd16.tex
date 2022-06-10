@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{amsthm}
+\usepackage{tcolorbox}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{multicol}
+\def\deg{\ensuremath{^\circ}}
+\def\v#1{\ensuremath{\mathrm{#1}}}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage} 
+\usepackage{colortbl}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\setlength{\parskip}{0pt}
+\lhead{Jhon Christian N. Rozano}
+\chead{}
+\rhead{May 31, 2021}
+
+\lfoot{Source: Brilliant}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\renewcommand{\footrulewidth}{1pt}
+
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\begin{document}
+	\setlength{\columnsep}{10pt}
+	\renewcommand{\arraystretch}{1.5}
+	\singlespacing
+	\newtcolorbox{mybox}[1]{title=#1}
+	
+	\begin{center}
+		{\large  \textbf{Physics Problems of the Day}} \\ 
+	\end{center}
+	\textbf{Problem 1:} On a school trip, Otto tries to take a selfie with the bottom of a deep well, but the phone slips out of his hand and into the well. He drops the phone \( 10\text{ m}  \) above the water's surface, and he listens for the splash from the same height. How many seconds will it take before Otto hears the splash? \\
+	\textbf{Note:} Assume no air resistance, \( g = 9.81{\text{ m/s}}^2 \), and the speed of sound equal to \(343\text{ m/s}\).
+	
+	\begin{mybox}{\textbf{Solution}}
+		Let $t$ be the time it takes to travel $10\text{ m}$ below the well. Then applying kinematics equation, we get
+		\[ \Delta x = \frac{1}{2}at^2 \Rightarrow 10 = \frac{1}{2}\times 9.81\text{ m/s}^2 \times t^2  \]
+		Therefore, \( t \approx 1.43\text{ s} \). After the phone drops into the well, the sound will also travel \(10\text{ m} \), reaching Otto's ears. Since the time is equal to distance divided by speed, we get
+		\[ t_1 = \frac{\text{distance}}{\text{speed}} = \frac{10\text{ m}}{343\text{ m/s}} \approx 0.03\text{ s}\]
+		Thus, the total time it will take before Otto hears the splash is 
+		\[ t_\text{total} = 1.43\text{ s} + 0.03\text{ s} = \boxed{1.46\text{ s}} \]
+	\end{mybox}
+	\medskip
+	\noindent \textbf{Problem 2:} The position of a $3\text{ kg}$ particle moving on the
+	\( xy-\text{plane} \) at time $t$  (in seconds) is given by the equation \( \vec{r} = \left( 2t^2 \hat{i} - \left( 4t+ 4t^2 \right) \hat{j} \right) \) m. Considering the origin $O$ as the pivot, what is the magnitude of the torque on the particle at \( t = 6\text{ s} \)?
+	\begin{mybox}{\textbf{Solution}}
+		The formula for torque is given by $\vec{\tau} = \vec{r} \times \vec{F} $. We need to look for $\vec{F}$ and $\vec{r}$. At \( t = 6\text{ s} \) the particle travels \[ \vec{r} = \left( (2 \times 6^2)\hat{i} - ( 4 \times 6 + 4 \times 6^2) \hat{j}    \right) = 72 \hat{i} - 168 \hat{j}  \]
+		
+		Then, to compute the force exhibited by the particle, we know that
+		\[ \vec{a} = \dfrac{\mathrm{d}\vec{v}}{\mathrm{d}t} =  \dfrac{\mathrm{d^2}\vec{x}}{\mathrm{d}t^2} = \dfrac{\mathrm{d^2}\vec{r}}{\mathrm{d}t^2} \Rightarrow \vec{\tau} = \vec{r} \times \vec{F} = \vec{r} \times m \cdot \dfrac{\mathrm{d^2}\vec{r}}{\mathrm{d}t^2}  \] 
+		\[\vec{a} = \dfrac{\mathrm{d^2}\vec{r}}{\mathrm{d}t^2} =  \dfrac{\mathrm{d^2}}{\mathrm{d}t^2} \left( 2t^2 \hat{i} - \left( 4t+ 4t^2 \right) \hat{j} \right)\text{ m} = \left( 4\hat{i} - 8\hat{j} \right)\text{ m/s}^2   \]
+		Thus, the force of the particle at \( t = 6\text{ s} \) is 
+		\[ \vec{F} = m \cdot \vec{a} = \left( 3\text{ kg} \right) \left( 4\hat{i} - 8\hat{j} \right)\text{ m} = \left( 12\hat{i} - 24\hat{j} \right)\text{ N} \]
+		Therefore, the torque \(\tau \) is 
+		\[ \vec{\tau} = \vec{r} \times \vec{F} = \left( 72 \hat{i} - 168 \hat{j} \right) \times \left(  12\hat{i} - 24\hat{j}  \right)\text{N}\cdot\text{m} = -1728 \hat{k} + 2016\hat{k} \text{ N}\cdot\text{m} = 288\hat{k} \text{ N}\cdot\text{m} \]
+		The magnitude of the torque is \( \boxed{ \vec{\tau} = 288\text{ N} \cdot \text{m}  }\)
+		
+	\end{mybox}
+	
+	
+\end{document}
