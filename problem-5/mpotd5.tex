@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{cancel}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage} 
+
+\lhead{March 26, 2021}
+\chead{}
+\rhead{jnrozano@up.edu.ph}
+
+\lfoot{Jhon Christian N. Rozano}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\renewcommand{\footrulewidth}{1pt}
+
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+\begin{document}
+	\centering
+	\large{\textbf{Math Problem of the Day}}
+	\justify
+		Let $ f(x) = x + e^x - 1$, and let $f^{-1}(x)$ denote the inverse function of $f(x)$.\\
+		Then the integral \( \displaystyle \int_{e}^{1+e^2} f^{-1}(x) \, dx \) evaluates to 
+		\[ k_0+k_1e^1+k_2e^2+ \dotsb + k_ne^n,  \]
+		where $k_0, k_1, ... , k_n$ are rational numbers and $ e \approx 2.718 $ is Euler's number. If the sum $k_0+k_1+k_2+ \dotsb +k_n$ can be expressed as $\frac{A}{B}$, where $A$ and $B$ are coprime positive integers, what is the value of $A+B+n$?
+		
+		\bigskip
+		\noindent
+		\textbf{Solution:} 
+		
+		\noindent
+		Note that $f$ is continuous and strictly increasing on its domain. In addition, as $x \rightarrow \infty,\ f(x) \rightarrow \infty, \, \text{and as} \, x \rightarrow - \infty, \ f(x) \rightarrow - \infty. \, \text{So} \, f \, \text{is bijective} $
+		Without taking the inverse of the function $f(x) = x + e^x - 1$ , we know that $f(x) = y $ and $ f^{-1}(y) = x $
+		
+		\[ \int_{e}^{1+e^2} f^{-1}(x) \, dx = \int_{e}^{1+e^2} x \, dy  \]
+		
+		\noindent
+		and since,
+		
+		\[ \frac{dy}{dx} = 1+e^x \Longrightarrow dy = \left( 1+e^x \right) dx \Longrightarrow \int_{1}^{2} x\left( 1+e^x \right) \, dx \]
+		
+		\noindent
+		Using Integration by Parts, let $u = x$ and $dv = 1+e^x$. Hence, $du = 1$ and $v = x+e^x$
+		\[ \int_{1}^{2} x\left( 1+e^x \right) \, dx =  \Eval{x \left( x+e^x \right)}{1}{2} - \int_{1}^{2} 1\left( x+e^x \right) \, dx  = \Eval{ x \left(x+e^x \right) - \frac{x^2}{2} -e^x}{1}{2} \]
+		\[ \Eval{ x^2 + xe^x - \frac{x^2}{2} -e^x}{1}{2} =  \left( 4 + 2e^2 - 2 -e^2 \right) - \left( 1 + e^x - \frac{1}{2} -e^x \right) = e^2 + \frac{3}{2}  \]
+		\[ e^2 + \frac{3}{2} \Longrightarrow \frac{3}{2}e^0 + 0e^1 +1e^2 \Longrightarrow k_0 = \frac{3}{2}, \, k_1 = 0,  \, k_2 = 1, \, n=2  \]
+		\[  k_0+k_1+k_2 = \frac{5}{2} = \frac{A}{B} \Longrightarrow	A+B+n = 5+2+2 = \fbox{\textcolor{red}{9}} \]
+
+		
+\end{document}
