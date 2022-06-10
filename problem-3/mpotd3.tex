@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{cancel}
+
+% Packages
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage} 
+
+% Define Header
+\lhead{March 24, 2021}
+\chead{}
+\rhead{jnrozano@up.edu.ph}
+
+% Define Footer
+\lfoot{Jhon Christian N. Rozano}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+%Define width of horizontal line in the header
+\renewcommand{\headrulewidth}{1pt}
+
+%Define width of horizontal line in the footer
+\renewcommand{\footrulewidth}{1pt}
+
+	\begin{document}
+	\centering
+		\large{\textbf{Math Problem of the Day}}
+	\justify
+
+	Let $f(x)$ be a cubic polynomial such that $f(1)=5, f(2)=20, f(3)=45$. Then find the product of roots of the equation below.
+	\[ {\left[ f(x) \right]}^2 +3xf(x) +2x^2 = 0 \]
+	
+	\bigskip
+	\noindent
+		\textbf{Solution:}
+		
+	\noindent
+	Note that the cubic polynomial function is in the form
+	\[ f(x) - 5x^2 = a(x-1)(x-2)(x-3) \Rightarrow f(x) = a(x-1)(x-2)(x-3) +5x^2  \]
+	The function has a constant term of $6a$ and a leading term of $ax^3$. Substituting the function to the equation ${\left[ f(x) \right]}^2 +3xf(x) +2x^2 = 0 $ would give the leading term of $a^2x^6$ and a constant term of $(6a)^2 = 36a^2$ \\
+
+	\noindent
+	Thus the product of the roots of ${\left[ f(x) \right]}^2 +3xf(x) +2x^2 = 0 $ is given by $ \frac{ \text{constant term}}{ \text{leading coefficient}} = \frac{36a^2}{a^2} = 36$. Therefore, the answer is \fbox{\textcolor{red}{$36$}}.
+	
+	\bigskip
+	\centering
+		\large{\textbf{Physics Problem of the Day}}
+	\justify
+Unfortunately, cats fall out of windows in cities sometimes. In a famous article, \textit{The New York Times} notes that the likelihood that a cat survives a fall goes down as the fall distance increases (expected) but then goes back up at very large distances (perhaps unexpected). If the statistics are correct, then there should be some physical reason this occurs. Some have suggested that terminal velocity and cat biology come into play. The article above indicates that cats have a terminal velocity of 60 miles per hour (mph). If we model the drag force $F_d$ on a cat as
+
+\[ F_d = \frac{1}{2} kAv^2 \]
+\noindent
+where $A$ is the cross-sectional area of the cat, v is its velocity and $k=1\ kg/m^3$
+what is the cross-sectional area in $m^2$ of a $5 \ kg$ cat with a terminal velocity of $60 \ mph$?
+
+\noindent
+\textbf{Details and assumptions}
+\begin{itemize}
+	\item The acceleration of gravity is $-9.8 \  m/s^2$
+	\item 1 mile = 1.6 km
+\end{itemize}
+
+	\noindent
+		\textbf{Solution:}
+
+\noindent
+Terminal velocity is reached when the drag force compensates for the gravitational force. Therefore $mg=F_d$, and we convert $60 \ mph$ to $m/s$
+	\[ \frac{60 \ \cancel{miles}}{ \cancel{hour}} \times \frac{1.6 \ \cancel{km}}{1 \ \cancel{mile}} \times \frac{1000 \ m}{1 \ \cancel{km}} \times \frac{1 \ \cancel{hour}}{60 \ \cancel{minutes}} \times \frac{1 \  \cancel{minute}}{60 \ seconds} \approx 26.67 \ m/s \]
+	\[ F_d = \frac{1}{2} kAv^2 \Rightarrow mg = \frac{1}{2} kAv^2 \Rightarrow \left(5 \ kg \right) \left(9.8 \ m/s^2 \right) = \frac{1}{2} \left( 1 \ kg/m^3 \right) \left( A \right) {\left(26.67 \ m/s \right)}^2 \]
+	\[ A = \frac{2 \left(5 \ kg \right) \left(9.8 \ m/s^2 \right)}{\left( 1 \ kg/m^3 \right)  {\left(26.67 \ m/s \right)}^2 } = \frac{2 \left(5 \ \cancel{kg} \right) \left(9.8 \ m/\cancel{s^2} \right)}{\left( 1 \ \cancel{kg}/m^{\cancel{3}} \right)  \left(26.67^2 \ \cancel{m^2}/\cancel{s^2} \right) } \approx \fbox{\textcolor{red}{0.14}} \ m^2  \]
+	\end{document}
