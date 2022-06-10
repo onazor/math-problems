@@ -1,0 +1,61 @@
+\documentclass[14pt]{extreport}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage} 
+\usepackage{xcolor,colortbl}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\lhead{April 3, 2021}
+\chead{}
+\rhead{jnrozano@up.edu.ph}
+
+\lfoot{Jhon Christian N. Rozano}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\renewcommand{\footrulewidth}{1pt}
+
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\begin{document}
+	\setlength{\columnsep}{20pt}
+	\renewcommand{\arraystretch}{1.5}
+	\singlespacing
+	
+	\noindent
+	\begin{center}
+		{\large  \textbf{Math Problem of the Day}} \\ 
+	\end{center}
+	
+		\noindent
+		Calculate the limit below in terms of $a$, and $b$, where $a$, and $b$ are constants with $b \geq 0$.
+		\[ \lim_{n \to \infty} {\left( \frac{a + \sqrt[n]{b} - 1}{a}  \right)}^n  \]
+	\bigskip
+	\noindent
+	\textbf{Solution:} \\
+		Set the expression to $y$ and take the natural logarithm of both sides, we have
+		\[ y = \lim_{n \to \infty} {\left( \frac{a + \sqrt[n]{b} - 1}{a}  \right)}^n  \Rightarrow
+ 		\ln y = \lim_{n \to \infty} n \ln \left( \frac{a + \sqrt[n]{b} - 1}{a}  \right)
+ 		=  \lim_{n \to \infty} \frac{ \ln \left( \frac{a + \sqrt[n]{b} - 1}{a}  \right)}{\frac{1}{n}} \]
+		Let $ p = \frac{1}{n}  $, then the expression becomes
+		\[  \lim_{p \to 0} \frac{ \ln \left( \frac{a + b^p - 1}{a}  \right)}{p} = \ln y \]
+		Note that the limit above will be indeterminate in the form $\frac{0}{0}$ as $ p \to 0  $. Thus, using the L'Hôpital's rule,
+		\[  \lim_{p \to 0} \frac{ \ln \left( \frac{a + b^p - 1}{a}  \right)}{p} =  \lim_{ p \to 0 } \left[ \frac{  \frac{\mathrm{d}}{\mathrm{d}p} \left( \frac{a + b^p - 1}{a} \right)  }{1 \cdot \frac{a + b^p - 1}{a}} \right] = \lim_{ p \to 0} \left( \frac{a}{a+b^p-1} \cdot \frac{b^p \ln b}{a} \right) \]
+		\[ \lim_{ p \to 0} \left( \frac{a}{a+b^p-1} \cdot \frac{b^p \ln b}{a} \right) = \frac{\ln b}{a} = \ln y \]
+		Hence,
+		\[ y = e^{\ln b^{\frac{1}{a}}} = b^{\frac{1}{a}} =\textcolor{red}{\sqrt[a]{b}}  \]
+
+\end{document}
