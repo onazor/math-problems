@@ -1,5 +1,5 @@
 # math-problems
-Hello! This repository contains all the math problems and solutions I have been solving as a student. I have been trying to import the solutions into **LaTeX** file format. Every week, there will be a math problem I will be solving! 
+Hello! This repository contains all the math problems[^1] and solutions I have been solving as a student. I have been trying to import the solutions into **LaTeX** file format. Every week, there will be a math problem I will be solving! 
 
 So here's the code for the preamble:
 
@@ -38,3 +38,6 @@ So here's the code for the preamble:
 \renewcommand{\familydefault}{\sfdefault}
 \def\mathLarge#1{\mbox{\LARGE $#1$}}
 ```
+
+[^1]: MPOTD: Math Problem of the Day
+
