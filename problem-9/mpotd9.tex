@@ -1,0 +1,79 @@
+\documentclass[14pt]{extreport}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{multicol}
+\def\deg{\ensuremath{^\circ}}
+\def\v#1{\ensuremath{\mathrm{#1}}}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage} 
+\usepackage{colortbl}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\setlength{\parskip}{0pt}
+\lhead{April 5, 2021}
+\chead{}
+\rhead{jnrozano@up.edu.ph}
+
+\lfoot{Jhon Christian N. Rozano}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\renewcommand{\footrulewidth}{1pt}
+
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\begin{document}
+	\raggedcolumns
+	\setlength{\columnsep}{10pt}
+	\renewcommand{\arraystretch}{1.5}
+	\singlespacing
+	
+	\begin{center}
+		{\large  \textbf{Math Problem of the Day}} \\
+		{\emph{Topic: Number Theory}} 
+	\end{center}
+	{ \LARGE
+	\[ 9^{8^{7^{6^5}}}  \] }
+	\noindent
+	What are the last two digits when this integer is fully expanded out?
+	
+	\bigskip
+	\noindent
+	\textbf{Solution 1:} \\
+	Observe that from repeated modular arithmetic,
+	\begin{multicols}{2}
+			\[ 9^1  \equiv \textbf{9} \pmod{100} \]
+			\[ 9^2  \equiv \textbf{81} \pmod{100} \]
+			\[	9^3  \equiv 9 \times 81 \equiv \textbf{29} \pmod{100} \]
+			\[	9^4  \equiv 9 \times 29 \equiv \textbf{61} \pmod{100} \]
+			\[	9^5  \equiv 9 \times 61 \equiv \textbf{49} \pmod{100} \]
+			\[	9^6  \equiv 9 \times 49 \equiv \textbf{41} \pmod{100} \]
+			\[	9^7  \equiv 9 \times 41 \equiv \textbf{69} \pmod{100} \]
+			
+	\columnbreak
+			\[ 9^8  \equiv 9 \times 69 \equiv \textbf{21} \pmod{100} \]
+			\[ 9^9  \equiv 9 \times 21 \equiv \textbf{89} \pmod{100} \] 
+			\[ 9^{10}  \equiv 9 \times 89 \equiv \textbf{1} \pmod{100} \]
+			\[ 9^{11}  \equiv 9 \times 1 \equiv \textbf{\textcolor{red}{9}} \pmod{100} \] 
+			\[ 9^{12}  \equiv 9 \times 9 \equiv \textbf{\textcolor{red}{81}} \pmod{100} \]
+			\[ 9^{13}  \equiv 9 \times 81 \equiv \textbf{\textcolor{red}{29}} \pmod{100} \]
+			\[ \vdots \]
+	\end{multicols}
+	\noindent
+	The cycle of $\pmod{100}$ repeats after 10 modular arithmetic expressions. In order to reduce the original expression, we need to find \( \displaystyle 8^{7^{6^5} }  \pmod{10} \). Thus,
+	\[ \varphi(10) = 10 \left( 1 - \frac{1}{2} \right) \left(  1 - \frac{1}{5} \right) = 4 \]
+	\large
+	\[ 8^{{7^{6^5}}} \equiv 8^{{{(-1)}^{6^5} \pmod{4}}} \equiv 8^1 \Rightarrow 8 \]
+	Therefore $8^{{7^{6^5}}} \equiv 8 \pmod{10}$.
+	\[ 9^{8^{7^{6^5}}} \equiv 9^8 \equiv \fbox{\textcolor{red}{21}} \pmod{100}  \]
+\end{document}
