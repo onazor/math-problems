@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{amsthm}
+\usepackage{tcolorbox}
+\usepackage[paperheight=13in, paperwidth=8.5in, margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{multicol}
+\def\deg{\ensuremath{^\circ}}
+\def\v#1{\ensuremath{\mathrm{#1}}}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage} 
+\usepackage{array, caption, tabularx,  ragged2e}
+\usepackage{colortbl}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\setlength{\parskip}{0pt}
+\lhead{Jhon Christian N. Rozano}
+\chead{}
+\rhead{July 19, 2021}
+
+\lfoot{Source: Brilliant}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\renewcommand{\footrulewidth}{1pt}
+
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\renewcommand{\familydefault}{\sfdefault}
+\def\mathLarge#1{\mbox{\LARGE $#1$}}
+
+\begin{document}
+	\setlength{\columnsep}{10pt}
+	\renewcommand{\arraystretch}{1.5}
+	\singlespacing
+	\newtcolorbox{mybox}[1]{title=#1}
+	
+	\begin{center}
+		{\large  \textbf{Physics Problems of the Day}} \\
+	\end{center}
+
+	\medskip
+	
+	\begin{enumerate}
+		\item Samira launches a mini-rocket from the ground. The rocket immediately expends all of its fuel and launches vertically with initial speed $30\text{ m/s}$. When the rocket reaches its highest point, it has lost $40\%$ of the initial energy due to air resistance. \\
+		
+		Assuming $g = 10\text{ m/s}^2$, how much higher would the rocket have gone if there was no air resistance?
+		
+		\begin{mybox}{\textbf{Solution}}
+			Note that if there is no air resistance, the final kinetic energy of the mini-rocket at its highest point of reach is equal to its initial potential energy. Thus,
+			\[ mgh = \frac{1}{2} mv^2 \Rightarrow h = \frac{v^2}{2g} \]
+			Plugging in the values above, we get
+			\[ h = \frac{(30\text{ m/\cancel{s}})^{\cancel{2}}}{2(10\text{ \cancel{m/s}}^{2})} = 45\text{ m}\]
+			However, there is an air resistance present in the system. Since $40\%$ of the energy has lost at its highest point, we can denote that
+			\[ mgh_1 = \left( 1-0.4 \right)\frac{1}{2}mv^2 \]
+			Plugging in the values, we have
+			\[ h_1 = 0.3 \times \frac{(30\text{ m/\cancel{s}})^{\cancel{2}}}{10\text{ \cancel{m/s}}^2} = 27\text{ m} \]
+			Therefore, if there is no air resistance present in the system, the mini-rocket would take $45\text{ m}-27\text{ m} = \boxed{18\text{ m}}$ more to travel.
+		\end{mybox}
+	
+		\vspace{0.5cm}
+	
+		\item Esme and Fitz start driving their cars simultaneously, both with constant acceleration. The ratio of Fitz's acceleration to Esme's is $\frac{2}{3}$, and Esme's trip takes twice as much time as Fitz's. What is the ratio of Fitz's travel distance to Esme's?
+			\begin{mybox}{\textbf{Solution}}
+				Note that the distance formula is given by
+				\[ x = \frac{1}{2}at^2 \]
+				where $x$, $a$, and $t$ denote the distance, acceleration, and time. Let $x_F$ and $x_E$ be the distance travelled by Fitz and Esme, respectively; $a_F$ and $a_E$ be the acceleration; $t_F$ and $t_E$ be the time. Thus, we get 
+				\begin{align*}
+					\frac{x_F}{x_E} = & \frac{0.5 \times a_F \times {t_F}^2 }{0.5 \times a_E \times {t_E}^2} \\
+					= & \frac{a_F}{a_E} \times \left( \frac{t_F}{t_E} \right)^2 \\
+					\frac{x_F}{x_E} = & \frac{2}{3} \times \left( \frac{1}{2} \right)^2 = \frac{1}{6}
+				\end{align*}
+				Therefore, the ratio of Fitz's travel distance to Esme's is $\boxed{\frac{1}{6}}$.
+			\end{mybox}
+	\end{enumerate}
+	
+
+\end{document}
