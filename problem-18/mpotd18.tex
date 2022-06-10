@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{amsthm}
+\usepackage{tcolorbox}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{multicol}
+\def\deg{\ensuremath{^\circ}}
+\def\v#1{\ensuremath{\mathrm{#1}}}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage} 
+\usepackage{array, caption, tabularx,  ragged2e}
+\usepackage{colortbl}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\setlength{\parskip}{0pt}
+\lhead{Jhon Christian N. Rozano}
+\chead{}
+\rhead{July 5, 2021}
+
+\lfoot{Source: Brilliant}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\renewcommand{\footrulewidth}{1pt}
+
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\renewcommand{\familydefault}{\sfdefault}
+\def\mathLarge#1{\mbox{\LARGE $#1$}}
+
+\begin{document}
+	\setlength{\columnsep}{10pt}
+	\renewcommand{\arraystretch}{1.5}
+	\singlespacing
+	\newtcolorbox{mybox}[1]{title=#1}
+	\begin{center}
+		{\large  \textbf{Math Problems of the Day}} \\ 
+	\end{center}
+
+	\medskip
+	
+	\textbf{Problem 1:} Is the following a \textbf{tautology}, a \textbf{contradiction}, or a \textbf{contingent}?
+	\begin{equation*}
+	\mathLarge{\neg \left(  A \wedge \left(  \neg B \right) \right) \leftrightarrow \left(A \rightarrow B \right)} 
+	\end{equation*}
+	
+	\begin{mybox}{\textbf{Solution}}
+		We can use the truth table to determine if it is tautology, contradiction or contingent. \\
+		
+		\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			$A$ & $B$ & $\neg B$ & $A \wedge (\neg B)$ & $\neg (A \wedge (\neg B))$  & $A \rightarrow B$ & $\neg \left(  A \wedge \left(  \neg B \right) \right) \leftrightarrow \left(A \rightarrow B \right)$ \\
+			\hline
+			1 & 1 & 0 & 0 & 1 & 1 & 1 \\
+			\hline
+			0 & 1 & 0 & 0 & 1 & 1 & 1 \\
+			\hline
+			1 & 0 & 1 & 1 & 0 & 0 & 1 \\
+			\hline
+			0 & 0 & 1 & 0 & 1 & 1 & 1 \\
+			\hline
+		\end{tabular}
+		\end{center}
+	
+		\medskip
+		Since all of the values in the last column are true, the statement $ \neg \left(  A \wedge \left(  \neg B \right) \right) \leftrightarrow \left(A \rightarrow B \right) $ is indeed a tautology.
+	\end{mybox}
+
+	\medskip
+	
+	\textbf{Problem 2:} Show that this proposition is a \textbf{tautology}:
+	\begin{equation*}
+		\mathLarge{((A \wedge B) \rightarrow C ) \leftrightarrow (A \rightarrow (B \rightarrow C))} 
+	\end{equation*}
+	
+		\begin{mybox}{\textbf{Solution}}
+		We can use the truth table to show that the statement is tautology. \\
+		
+		\begin{center}
+			\begin{tabularx}{\linewidth}{|c|c|c|c|c|c|c|*{2}{>{\RaggedRight\arraybackslash}X|}|}
+				\hline
+				$A$ & $B$ & $C$ & $A \wedge B$  & $(A \wedge B) \rightarrow C$  & $B \rightarrow C$  & $A \rightarrow (B \rightarrow C)$ & $((A \wedge B) \rightarrow C ) \leftrightarrow (A \rightarrow (B \rightarrow C))$  \\
+				\hline
+				1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+				\hline
+				1 & 1 & 0 & 1 & 0 & 0 & 0 & 1 \\
+				\hline
+				0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 \\
+				\hline
+				1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 \\
+				\hline
+				0 & 0 & 1 & 0 & 1 & 1 & 1 & 1 \\
+				\hline
+				0 & 1 & 0 & 0 & 1 & 0 & 1 & 1 \\
+				\hline
+				1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+				\hline
+				0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+				\hline
+			\end{tabularx}
+		\end{center}
+		
+		\medskip
+		Since all of the values in the last column are true, the statement $ ((A \wedge B) \rightarrow C ) \leftrightarrow (A \rightarrow (B \rightarrow C)) $ is therefore a tautology. \qedsymbol
+	\end{mybox}
+	
+	
+\end{document}
